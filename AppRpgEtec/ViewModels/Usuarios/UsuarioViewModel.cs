@@ -79,9 +79,9 @@ namespace AppRpgEtec.ViewModels.Usuarios
                     Preferences.Set("UsuarioToken", uAutenticado.Token);
 
                     await Application.Current.MainPage
-                        .DisplayAlert("Informação", mensagem, "Ok");
+                        .DisplayAlertAsync("Informação", mensagem, "Ok");
 
-                    Application.Current.MainPage = new CadastroArmaView();
+                    Application.Current.MainPage = new AppShell();
                 }
                 else
                 {
@@ -93,7 +93,7 @@ namespace AppRpgEtec.ViewModels.Usuarios
             catch (Exception ex)
             {
                 await Application.Current.MainPage
-                    .DisplayAlert("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
+                    .DisplayAlertAsync("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
             }
         }
 
@@ -137,7 +137,7 @@ namespace AppRpgEtec.ViewModels.Usuarios
             catch (Exception ex)
             {
                 await Application.Current.MainPage
-                    .DisplayAlert("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
+                    .DisplayAlertAsync("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
             }
         }
     }
